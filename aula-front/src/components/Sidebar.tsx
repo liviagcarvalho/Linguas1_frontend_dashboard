@@ -15,8 +15,11 @@ const SidebarContainer = styled.div<{ isOpen: boolean }>`
   z-index: 1001;
 `;
 
-const Overlay = styled.div<{ isOpen: boolean }>`
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+const Overlay = styled.div.attrs<{ isOpen: boolean }>((props) => ({
+  style: {
+    display: props.isOpen ? "block" : "none",
+  },
+}))<{ isOpen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -51,10 +54,12 @@ const Sidebar = ({ isOpen, onClose }: Props) => {
       <SidebarContainer isOpen={isOpen}>
         <h2 style={{ color: "#fff", marginBottom: "2rem" }}>Páginas</h2>
         <MenuItem to="/" onClick={onClose}>Home Page</MenuItem>
-        <MenuItem to="/clientes" onClick={onClose}>Clientes</MenuItem> {/* <-- aqui está o novo botão */}
+        <MenuItem to="/clientes" onClick={onClose}>Clientes</MenuItem>
+        <MenuItem to="/expansao" onClick={onClose}>Oportunidade de Expansão</MenuItem> {/* ✅ novo botão */}
       </SidebarContainer>
     </>
   );
 };
 
 export default Sidebar;
+

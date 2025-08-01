@@ -281,6 +281,8 @@ const ChartContainer = styled.div`
 `;
 
 const ChartTitle = styled.h2`
+  text-align: center;
+  font-weight: bold;
   margin-bottom: 1rem;
 `;
 
@@ -445,9 +447,9 @@ const Homepage = () => {
           </ChartContainer>
         </ChartsGrid>
 
-        {/* BLOCO DO GRÁFICO DE CIDADE CENTRALIZADO E FLUIDO */}
         <FullWidthChartWrapper>
           <FullWidthChartContainer>
+            <ChartTitle>Faturamento por Cidade</ChartTitle>
             <FaturamentoPorCidade
               dados={aulasFiltradas.map((a) => {
                 const cliente = clientes.find((c) => c.ID_Cliente === a.id_cliente);

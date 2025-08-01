@@ -46,7 +46,6 @@ const FaturamentoPorCidade = ({ dados }: Props) => {
 
   return (
     <ChartContainer>
-      <ChartTitle>Faturamento por Cidade</ChartTitle>
       <ResponsiveContainer width="100%" height={400}>
         <BarChart
           data={dadosAgrupados}
